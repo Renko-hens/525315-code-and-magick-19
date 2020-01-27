@@ -14,7 +14,7 @@ var INDENT_COLUMN = 50;
 
 var TEXT_HEIGHT = 25;
 var BAR_WIDTH = 40;
-var barHeight = 150;
+var BAR_HEIGHT = 150;
 var MAX_BAR_HEIGHT = 150;
 
 var renderRect = function (options) {
@@ -76,8 +76,8 @@ window.renderStatistics = function (ctx, players, times) {
   for (var i = 0; i < players.length; i++) {
     ctx.fillStyle = '#000';
     ctx.fillText(players[i], RECT_X + INDENT_COLUMN + (BAR_WIDTH + INDENT_COLUMN) * i, TITLE_Y + GAP + FONT_GAP + MAX_BAR_HEIGHT + GAP + TEXT_HEIGHT);
-    ctx.fillText(Math.round(times[i]), RECT_X + INDENT_COLUMN + (BAR_WIDTH + INDENT_COLUMN) * i, TITLE_Y + GAP + FONT_GAP + MAX_BAR_HEIGHT + GAP + (-(barHeight * times[i]) / maxTime));
+    ctx.fillText(Math.round(times[i]), RECT_X + INDENT_COLUMN + (BAR_WIDTH + INDENT_COLUMN) * i, TITLE_Y + GAP + FONT_GAP + MAX_BAR_HEIGHT + GAP + (-(BAR_HEIGHT * times[i]) / maxTime));
     ctx.fillStyle = getColor(players[i]);
-    ctx.fillRect(RECT_X + INDENT_COLUMN + (BAR_WIDTH + INDENT_COLUMN) * i, TITLE_Y + GAP + FONT_GAP + GAP + MAX_BAR_HEIGHT + GAP, BAR_WIDTH, -(barHeight * times[i]) / maxTime);
+    ctx.fillRect(RECT_X + INDENT_COLUMN + (BAR_WIDTH + INDENT_COLUMN) * i, TITLE_Y + GAP + FONT_GAP + GAP + MAX_BAR_HEIGHT + GAP, BAR_WIDTH, -(BAR_HEIGHT * times[i]) / maxTime);
   }
 };
