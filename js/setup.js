@@ -28,6 +28,7 @@ var inputEyesColor = wizardAppearance.querySelector('[name = "eyes-color"]');
 var inputCoatColor = wizardAppearance.querySelector('[name = "coat-color"]');
 var inputFirebalColor = wizardFireball.querySelector('[name = "fireball-color"]');
 
+
 var createRandomArrayData = function (arr) {
   var index = Math.floor(Math.random() * arr.length);
   return arr[index];
@@ -100,17 +101,13 @@ var buttonEscPressHandler = function (evt) {
 };
 
 var setupOpenClickHandler = function (evt) {
-  if (evt.key === ENTER_BUTTON) {
-    openPopup();
-  } else if (evt.button === LEFT_BUTTON_MOUSE) {
+  if (evt.key === ENTER_BUTTON || evt.button === LEFT_BUTTON_MOUSE) {
     openPopup();
   }
 };
 
 var setupCloseClickHandler = function (evt) {
-  if (evt.key === ENTER_BUTTON) {
-    closePopup();
-  } else if (evt.button === LEFT_BUTTON_MOUSE) {
+  if (evt.key === ENTER_BUTTON || evt.button === LEFT_BUTTON_MOUSE) {
     closePopup();
   }
 };
