@@ -97,5 +97,8 @@
   popupButtonOpen.addEventListener('click', setupOpenClickHandler);
   popupButtonOpen.addEventListener('keydown', setupOpenClickHandler);
 
+  window.dialog = {
+    closePopup: closePopup
+  };
 })();
 
